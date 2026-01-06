@@ -1,37 +1,27 @@
-# proyecto_1_calidad_datos
-Limpieza, preparación y estandarización de datos para Store 1  | Python - Jupyter Notebook
+# 🛠️ Data Quality & Engineering Pipeline: Store 1 Customer Data
 
-# Proyecto: Limpieza y Preparación de Datos de Clientes
+## 🎯 Visión General
+Este proyecto establece un **Framework de Calidad de Datos** para "Store 1", enfocado en la transformación de datos brutos e inconsistentes en un formato estandarizado y "listo para el análisis". El objetivo central fue construir un pipeline robusto que garantice la integridad de los datos mediante protocolos automatizados de validación.
 
-## Descripción del Proyecto
-Este proyecto forma parte de un proceso de análisis de datos para "Store 1", con el objetivo principal de evaluar la calidad de una muestra de datos de clientes y prepararlos para su posterior análisis. El trabajo se centró en la limpieza, transformación y estandarización de los datos para garantizar su coherencia y utilidad.
+## 🧱 Implementación Técnica
+El pipeline aborda problemas críticos de calidad de datos utilizando **Python**, con un enfoque en la escalabilidad y la resiliencia ante errores.
 
-## Objetivos del Análisis
-- Identificar y corregir problemas de formato y tipo de datos en la información de los usuarios.
-- Estandarizar los nombres de usuario, las edades y las categorías de productos.
-- Aplicar técnicas de manejo de errores para garantizar la robustez del código.
-- Demostrar habilidades básicas de manipulación de datos con Python.
+### Funcionalidades de Ingeniería:
+* **Normalización Automatizada:** Implementación de algoritmos de manipulación de cadenas (`strip`, `replace`, `split`) para eliminar ruido y estandarizar identificadores de usuario y categorías de productos.
+* **Integridad de Tipos de Datos:** Conversión sistemática de tipos de datos (ej. flotantes a enteros para métricas de edad) para asegurar la consistencia matemática en procesos posteriores.
+* **Manejo Robustos de Errores:** Integración de bloques `try-except` para gestionar anomalías en los inputs de datos brutos, evitando fallos del pipeline durante el procesamiento por lotes.
+* **Procesamiento por Lotes (Batch Processing):** Desarrollo de lógica iterativa para aplicar estándares de limpieza de forma eficiente en todo el dataset de clientes.
 
-## Tecnologías Utilizadas
-- **Python**: El lenguaje de programación principal para el análisis.
-- **Métodos de Cadenas**: `strip()`, `replace()`, `split()`.
-- **Manejo de Errores**: Bloques `try-except`.
-- **Estructuras de Datos**: Listas y sus métodos asociados (`.sort()`, `len()`, `min()`, `max()`, `sum()`).
-- **F-strings**: Para la creación de cadenas de texto formateadas.
+## 📊 Lógica del Pipeline (ETL)
+1.  **Evaluación (Assessment):** Identificación de inconsistencias estructurales en `user_id`, `user_name`, y `user_age`.
+2.  **Limpieza (Cleaning):** Eliminación de artefactos de formato y normalización de capitalización (case normalization) para datos categóricos.
+3.  **Validación:** Aplicación de lógica de negocio para asegurar que los valores numéricos se encuentren dentro de los rangos operativos esperados.
+4.  **Síntesis:** Generación de métricas clave (gasto total, mínimo y máximo) por perfil de usuario.
 
-## Pasos Clave del Análisis
-1. **Evaluación de la Calidad de los Datos**: Se revisaron las variables `user_id`, `user_name`, `user_age` y `fav_categories` para identificar inconsistencias como espacios en blanco, tipos de datos incorrectos y errores de capitalización.
+## 🛠️ Stack Tecnológico
+* **Lenguaje:** Python 3.12.1
+* **Lógica Central:** Estructuras de datos dinámicas, manejo de excepciones y métodos avanzados de strings.
+* **Entorno:** Jupyter Notebook / VS Code.
 
-2. **Limpieza y Normalización**:
-   - Se eliminaron los espacios innecesarios y los guiones bajos de los nombres de usuario.
-   - Se corrigió el tipo de dato de la edad de flotante a entero.
-   - Se convirtieron todas las categorías de productos a minúsculas para estandarizar los datos.
-
-3. **Procesamiento Avanzado**:
-   - Se implementó un bloque `try-except` para manejar posibles errores al convertir la edad, garantizando que el programa no se detenga.
-   - Se utilizó un bucle (`for loop`) para aplicar de manera eficiente todas las correcciones a una lista completa de usuarios, demostrando la capacidad de automatización.
-
-4. **Resumen de Datos**: Se calcularon métricas clave como el gasto total, mínimo y máximo por usuario, y se generaron mensajes personalizados para resumir la información de los clientes.
-
-## Conclusiones
-Este proyecto demostró un manejo sólido de las bases de la limpieza de datos en Python. Las técnicas aplicadas garantizan la integridad de la información, permitiendo que el equipo de análisis de "Store 1" pueda proceder con confianza a realizar un análisis de datos más profundo y generar insights de negocio.
+## 💡 Impacto de Datos
+Mediante la implementación de este pipeline, se logró transicionar de datos fragmentados a una **"Única Fuente de Verdad" (Single Source of Truth)**. Esto garantiza que cualquier modelo predictivo o reporte financiero posterior se base en datos de alta fidelidad, eliminando sesgos operativos.
