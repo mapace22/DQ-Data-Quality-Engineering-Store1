@@ -1,4 +1,4 @@
-🛠️ Data Quality & Engineering Pipeline: Store 1 Customer Data
+* 🛠️ Data Quality & Engineering Pipeline: Store 1 Customer Data
 🎯 Project Overview Developed a comprehensive Data Quality Framework for "Store 1," focused on transforming raw, inconsistent data into a standardized, "analysis-ready" format. The central goal was to build a robust pipeline that ensures data integrity through automated validation protocols and schema enforcement.
 
 
